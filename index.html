@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area Converter</title>
+</head>
+<body>
+    <h1>Area Converter</h1>
+    <form id="areaConverterForm">
+        <label for="marlaInput">Enter Area in Marla:</label>
+        <input type="number" id="marlaInput" placeholder="Enter Marla area" required>
+        <button type="button" onclick="convertArea()">Convert</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function convertArea() {
+           
+            var marla = parseFloat(document.getElementById("marlaInput").value);
+
+           
+            if (!isNaN(marla)) {
+              
+                var squareFeet = marla * 272.25; 
+                document.getElementById("result").innerHTML = `${marla} Marla is equal to ${squareFeet} square feet`;
+            } else {
+                
+                document.getElementById("result").innerHTML = "Please enter a valid area in Marla.";
+            }
+        }
+    </script>
